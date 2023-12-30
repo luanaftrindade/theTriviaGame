@@ -10,6 +10,9 @@ internals.elements.app = document.getElementById("app");
 const playButton = document.getElementById("buttonToPlay");
 const mainTitle = document.getElementById("mainTitle");
 const mainText = document.getElementById("main-text");
+let normalClick = new Audio('resources/click.wav');
+let clickRestart = new Audio('resources/clickRestart.wav');
+
 
 internals.showQuestions = function (questions) {
     let correctAnswer = questions[internals.currentQuestionIndex].correct_answer;
@@ -62,6 +65,7 @@ internals.createEndGameHTML = function () {
 
 internals.renderQuestions = function (questions) {
     playButton.addEventListener("click", function () {
+        normalClick.play();
         playButton.remove();
         mainTitle.remove();
         mainText.remove();
@@ -100,6 +104,7 @@ internals.checkAnswer = function (questions) {
     if (answerButtons.length === 4) {
         answerButtons.forEach(button => {
             button.addEventListener("click", function () {
+                normalClick.play();
                 console.log("Click button: ", button.textContent);
                 internals.increaseNumberOfAnswersBar(answersBar);
                 internals.answers.push(button.textContent);
