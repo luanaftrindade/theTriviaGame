@@ -9,46 +9,62 @@
 
 .main-title {
     position: relative;
-    
+    -webkit-box-reflect: below -50% linear-gradient(transparent, rgba(162, 198, 240, 0.2));
+    font-size: 4.5em;
 }
 
 .main-title span {
+    font-family: 'Russo One', sans-serif;
     position: relative;
     display: inline-block;
-    font-size: 100px;
     color: #262883;
-    text-transform: uppercase;
-    animation: flip 2s infinite;
-    animation-delay: calc(.3s * var(--i))
+    animation: main-title 2s infinite;
+    animation-delay: calc(.1s * var(--i));
+
 }
 
-@keyframes flip {
+@keyframes main-title {
 
     0%,
-    50% {
-        transform: rotateY(360deg)
+    40%,
+    100% {
+        transform: translateY(0)
     }
+
+    20% {
+        transform: translateY(-20px)
+    }
+}
+
+#main-text {
+    font-family: 'Russo One', sans-serif;
+    display: flex;
+    text-align: center;
+    font-size: 2em;
+    text-shadow: 0em 0em 0.5rem #6692c5;
+
+
 }
 
 #buttonToPlay {
     background-color: #262883;
     border: none;
-    border-radius: 20px;
-    color: white;
-    padding: 40px 82px;
-    margin-top: 20%;
+    border-radius: 8vw;
+    color: #fad1d0;
+    padding: 4vh 8vw;
     text-align: center;
-    text-decoration: none;
+    text-decoration: double;
     display: inline-block;
     font-size: 2em;
     font-family: 'Silkscreen', sans-serif;
-    
+
 
 }
 
 #buttonToPlay:hover {
-    background-color:#6692c5;
+    background-color: #6692c5;
     transition: 0.0s;
+    color: #262883;
 }
 
 
@@ -59,10 +75,10 @@
     text-align: justify;
 }
 
-#numberOfAnswers { 
+#numberOfAnswers {
     text-align: center;
     font-family: 'Russo One', sans-serif;
-    font-size: 2em;
+    font-size: 1em;
     text-shadow: 0px 0px 3px #6692c5;
 }
 
@@ -70,51 +86,52 @@ progress {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    width: 80%;
-    height: 2rem;
+    width: 50vw;
+    height: 3vh;
     color: #fad1d0;
     border: 1px #262883;
-    
 
-  }
-  
-  progress[value]::-webkit-progress-bar,
-  progress[value] {
+
+}
+
+progress[value]::-webkit-progress-bar,
+progress[value] {
     background-color: #fad1d0;
     box-shadow: 0 2px 5px #262883 inset;
 
-  }
-  
-  progress[value]::-webkit-progress-value {
+}
+
+progress[value]::-webkit-progress-value {
     background-color: #262883;
     transition: all 0.1s ease-out;
-  }
-  
-  progress[value]::-moz-progress-bar {
+}
+
+progress[value]::-moz-progress-bar {
     background-color: #262883;
     transition: all 0.1s ease-out;
-  }
+}
 
 
-.informationAboutQuestion{
+.informationAboutQuestion {
     font-family: 'Russo One', sans-serif;
-    font-size: 2em;
+    font-size: 1em;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
+    width: 50vw;
     text-shadow: 0px 0px 3px #6692c5;
 }
 
 
-#question{
-    font-size: 2em;
+#question {
+    font-size: 1.5em;
     text-shadow: 0px 0px 3px #6692c5;
     background-color: #262883;
-    border-radius: 20px;
+    width: 60vw;
+    border-radius: 0.5em;
     color: white;
-
+    text-align: center;
 
 }
 
@@ -123,53 +140,52 @@ progress {
     align-self: center;
     flex-direction: column;
     align-items: center;
-    
+
 }
 
-#imageOne {
-    image-rendering: pixelated;
-}
 
 #answerOne,
 #answerTwo,
 #answerThree,
 #answerFour {
     background-color: #262883;
-    height: 100px;
-    width: 500px;
+    height: 8vh;
+    width: 50vw;
     border: none;
     border-radius: 20px;
     color: white;
-    padding: 10px 30px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
-    font-size: 30px;
+    font-size: 1em;
     font-family: 'Preahvihear', sans-serif;
 
 }
 
 #answerOne:hover {
-    background-color:#6692c5;
+    background-color: #6692c5;
     transition: 0.0s;
+    color: #262883;
 }
 
 #answerTwo:hover {
-    background-color:#6692c5;
+    background-color: #6692c5;
     transition: 0.0s;
+    color: #262883;
 }
 
 #answerThree:hover {
-    background-color:#6692c5;
+    background-color: #6692c5;
     transition: 0.0s;
+    color: #262883;
 }
 
 #answerFour:hover {
-    background-color:#6692c5;
+    background-color: #6692c5;
     transition: 0.0s;
+    color: #262883;
 }
 
-#answerMessage{
+#answerMessage {
     font-family: 'Russo One', sans-serif;
     font-size: 2em;
     text-align: center;
@@ -195,7 +211,7 @@ progress {
 }
 
 #restartGame:hover {
-    background-color :#6692c5;
+    background-color: #6692c5;
     transition: 0.0s;
 }
 
@@ -213,35 +229,37 @@ progress {
 
 html {
     font-family: 'Preahvihear', sans-serif;
-    --r: 56px; /* control the size */
-    --c1: #8ba7c7 /*color 1*/ 99%,#0000 101%;
-    --c2: #f1b8b7 /*color 2*/ 99%,#0000 101%;
-    
-    --s:calc(var(--r)*.866);  /* .866 = cos(30deg) */
-    --g0:radial-gradient(var(--r),var(--c1));
-    --g1:radial-gradient(var(--r),var(--c2));
-    --f:radial-gradient(var(--r) at calc(100% + var(--s)) 50%,var(--c1));
-    --p:radial-gradient(var(--r) at 100% 50%,var(--c2));
-    background:
-      var(--f) 0 calc(-5*var(--r)/2),
-      var(--f) calc(-2*var(--s)) calc(var(--r)/2),
-      var(--p) 0 calc(-2*var(--r)),
-      var(--g0) var(--s) calc(-5*var(--r)/2),
-      var(--g1) var(--s) calc( 5*var(--r)/2),
-      radial-gradient(var(--r) at 100% 100%,var(--c1)) 0 calc(-1*var(--r)),   
-      radial-gradient(var(--r) at 0%   50% ,var(--c1)) 0 calc(-4*var(--r)),
-      var(--g1) calc(-1*var(--s)) calc(-7*var(--r)/2),
-      var(--g0) calc(-1*var(--s)) calc(-5*var(--r)/2),
-      var(--p) calc(-2*var(--s)) var(--r),
-      var(--g0) calc(-1*var(--s)) calc(var(--r)/ 2),
-      var(--g1) calc(-1*var(--s)) calc(var(--r)/-2),
-      var(--g0) 0 calc(-1*var(--r)),
-      var(--g1) var(--s) calc(var(--r)/-2),
-      var(--g0) var(--s) calc(var(--r)/ 2) 
-      #f1b8b7; /*color 2 again here */
-    background-size: calc(4*var(--s)) calc(6*var(--r));
-  }
-  
+    --r: 56px;
+    /* control the size */
+    --c1: #8ba7c7
+        /*color 1*/
+        99%, #0000 101%;
+    --c2: #f1b8b7
+        /*color 2*/
+        99%, #0000 101%;
 
-  
-  
+    --s: calc(var(--r)*.866);
+    /* .866 = cos(30deg) */
+    --g0: radial-gradient(var(--r), var(--c1));
+    --g1: radial-gradient(var(--r), var(--c2));
+    --f: radial-gradient(var(--r) at calc(100% + var(--s)) 50%, var(--c1));
+    --p: radial-gradient(var(--r) at 100% 50%, var(--c2));
+    background:
+        var(--f) 0 calc(-5*var(--r)/2),
+        var(--f) calc(-2*var(--s)) calc(var(--r)/2),
+        var(--p) 0 calc(-2*var(--r)),
+        var(--g0) var(--s) calc(-5*var(--r)/2),
+        var(--g1) var(--s) calc(5*var(--r)/2),
+        radial-gradient(var(--r) at 100% 100%, var(--c1)) 0 calc(-1*var(--r)),
+        radial-gradient(var(--r) at 0% 50%, var(--c1)) 0 calc(-4*var(--r)),
+        var(--g1) calc(-1*var(--s)) calc(-7*var(--r)/2),
+        var(--g0) calc(-1*var(--s)) calc(-5*var(--r)/2),
+        var(--p) calc(-2*var(--s)) var(--r),
+        var(--g0) calc(-1*var(--s)) calc(var(--r)/ 2),
+        var(--g1) calc(-1*var(--s)) calc(var(--r)/-2),
+        var(--g0) 0 calc(-1*var(--r)),
+        var(--g1) var(--s) calc(var(--r)/-2),
+        var(--g0) var(--s) calc(var(--r)/ 2) #f1b8b7;
+    /*color 2 again here */
+    background-size: calc(4*var(--s)) calc(6*var(--r));
+}

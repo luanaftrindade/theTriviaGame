@@ -9,6 +9,7 @@ const externals = {};
 internals.elements.app = document.getElementById("app");
 const playButton = document.getElementById("buttonToPlay");
 const mainTitle = document.getElementById("mainTitle");
+const mainText = document.getElementById("main-text");
 
 internals.showQuestions = function (questions) {
     let correctAnswer = questions[internals.currentQuestionIndex].correct_answer;
@@ -34,7 +35,7 @@ internals.createFilmQuestionsHTML = function (questions) {
             </div>                
             
             <p id="question"><strong>Question: </strong>${questions[internals.currentQuestionIndex].question}</p>
-            <p id="answerMessage"></p>
+       
             <div class="answerButtons">
                 <p><button id="answerOne">${optionsList[0]}</button></p>
                 <p><button id="answerTwo">${optionsList[1]}</button></p>
@@ -42,6 +43,7 @@ internals.createFilmQuestionsHTML = function (questions) {
                 <p><button id="answerFour">${optionsList[3]}</button></p> 
             </div>
             <div class="checkAndNextButtons">
+                 <p id="answerMessage"></p>
                 <p><button id="restartGame">Restart Game</button></p>
             </div>
         </div>
@@ -62,6 +64,7 @@ internals.renderQuestions = function (questions) {
     playButton.addEventListener("click", function () {
         playButton.remove();
         mainTitle.remove();
+        mainText.remove();
         window.location.hash = "#playingMenu";
         internals.currentQuestionIndex = 0; // Initialize index to 0
         internals.elements.app.innerHTML = internals.createFilmQuestionsHTML(questions);
