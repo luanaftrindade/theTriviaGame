@@ -6,11 +6,9 @@ const internals = {};
 
 // Flag to track whether questions have been fetched
 let questionsFetched = false;
-let backgroundMusic = new Audio('resources/Chillout.mp3');
 
 externals.start = function () {
     internals.buttonHandler();
-    backgroundMusic.play();
 };
 
 internals.buttonHandler = async function () {

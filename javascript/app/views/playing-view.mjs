@@ -12,6 +12,8 @@ const mainTitle = document.getElementById("mainTitle");
 const mainText = document.getElementById("main-text");
 let normalClick = new Audio('resources/click.wav');
 let clickRestart = new Audio('resources/clickRestart.wav');
+let backgroundMusic = new Audio('resources/Chillout.mp3');
+
 
 
 internals.showQuestions = function (questions) {
@@ -161,8 +163,9 @@ internals.renderEndGame = function () {
 
 externals.render = function (questions) {
     if (questions) {
+        backgroundMusic.play();
         internals.renderQuestions(questions);
-
+   
     }
 };
 
