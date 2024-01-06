@@ -6,7 +6,7 @@ Welcome to my first (maybe not the last) Trivia Game! This interactive quiz was 
 
 - **Question Variety:** Enjoy a diverse set of questions covering a multitude of categories.
 - **Category Randomization:** Questions are dynamically selected from more than 20 categories.
-- **Difficulty Levels:** Choose from 3 different levels of difficulty to match your expertise.
+- **Difficulty Levels:** Choose from 3 different levels of difficulty to match your expertise (not working! - solving the problem).
 - **Interactive UI:** The game is designed with a user-friendly interface for seamless navigation.
 
 
